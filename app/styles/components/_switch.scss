@@ -1,0 +1,62 @@
+/* -------------------------------- 
+Title: Switch - Light/Dark
+Description : Custom ON/OFF checkbox toggle
+-------------------------------- */
+.switch {
+    height: 26px;
+    margin-left: 12px;
+
+    input[type=checkbox] {
+        position: absolute;
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 48px;
+        height: 26px;
+        display: block;
+        border-radius: 60px;
+        position: relative;
+        transition: 0.3s;
+
+        @include themed() {
+            background: t($toggle);
+        }
+        &:hover {
+            background: linear-gradient(90deg, $gradient-hover-1 0%, $gradient-hover-2 100%);
+            transition: 0.3s;
+        }
+    }
+
+    label:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 9px);
+        right: 5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 20px;
+        transition: 0.3s;
+
+        @include themed() {
+            background-color: t($top-bg-pattern);
+        }
+    }
+
+    input:checked+label {
+        @include themed() {
+            background: linear-gradient(90deg, $gradient-hover-1 0%, $gradient-hover-2 100%);
+        }
+        transition: 0.3s;
+    }
+
+    input:checked+label:after {
+        right: calc(50% - 7px);
+        transform: translateX(-50%);
+        transition: 0.3s;
+    }
+}

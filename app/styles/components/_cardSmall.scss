@@ -1,0 +1,44 @@
+.card__wrapper {
+    .card {
+
+        .card__info ul,
+        .card__stat ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card__info {
+            ul {
+                margin-bottom: 26px;
+                align-items: center;
+
+                li {
+                    @include themed() {
+                        color: t($text-1);
+                    }
+                }
+            }
+
+
+        }
+
+        .card__stat {
+            ul {
+                li.card__number-small {
+                    font-size:32px;
+                    @include themed() {
+                        color: t($text-2);
+                    }
+                }
+                li.card__vote {
+                    display:flex;
+                    align-items: flex-end;
+                    .card__vote-container {
+                        display:flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

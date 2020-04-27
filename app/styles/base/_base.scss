@@ -1,0 +1,127 @@
+//-- BASE
+
+* {
+    box-sizing: border-box;
+    transition: 0.3s all ease-in-out;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+h2 {
+    font-size: 24px;
+    padding: 30px 0 10px 0;
+
+    @include themed() {
+        color: t($text-2);
+    }
+}
+
+.bold-700 {
+    font-weight: 700;
+}
+
+.ft-12 {
+    font-size: 12px;
+}
+
+.ft-14 {
+    font-size: 14px;
+}
+
+.up {
+    color: $lime-green;
+}
+
+.down {
+    color: $bright-red;
+}
+
+.up,
+.down {
+    margin-left: 4px;
+}
+
+body {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+.page {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    @include themed() {
+        background-color: t($background);
+    }
+
+    transition: 0.5s all ease-in-out;
+}
+
+.background {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:245px;
+    width:100%;
+
+    @include themed() {
+        background-color: t($top-bg-pattern);
+    }
+    z-index: -1;
+    transition: 0.5s all ease-in-out;
+}
+
+#container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 1200px) {
+    #container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #container {
+        max-width: inherit;
+    }
+}

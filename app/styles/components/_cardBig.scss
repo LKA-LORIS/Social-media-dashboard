@@ -1,0 +1,112 @@
+//-- CARD-BIG
+.card__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    //background-color: hotpink;
+
+    .card-before {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            width: 100%;
+        }
+    }
+
+    .card-facebook:before {
+        background: $facebook;
+    }
+
+    .card-twitter:before {
+        background: $twitter;
+    }
+
+    .card-instagram:before {
+        background: linear-gradient(90deg, ($instagram-gradient-1) 0%, ($instagram-gradient-2) 100%);
+    }
+
+    .card-youtube:before {
+        background: $youtube;
+    }
+
+    .card {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 15px;
+        padding: 24px;
+        max-width: 255px;
+        flex-basis: calc(25% - 30px);
+
+        &:hover {
+            @include themed() {
+                background-color: t($hover-card);
+            }
+        }
+
+        @include themed() {
+            background-color: t($background-card);
+        }
+
+
+        ul>li {
+            display: flex;
+            justify-content: center;
+        }
+
+        li.card__brand__people {
+            margin-bottom: 24px;
+            align-items: center;
+        }
+
+        li.card__brand__people span {
+            margin-left: 8px;
+
+            @include themed() {
+                color: t($text-1);
+            }
+        }
+
+        li.card__number-big {
+            margin-bottom: 5px;
+            font-size: 56px;
+
+            @include themed() {
+                color: t($text-2);
+            }
+        }
+
+        li.card__type {
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            @include themed() {
+                color: t($text-1);
+            }
+        }
+
+        li.card__vote {
+            align-items: center;
+        }
+
+        @media screen and (max-width: 1200px) {
+            max-width: 210px;
+        }
+
+        @media screen and (max-width: 992px) {
+            max-width: calc(50% - 30px);
+            flex-basis: calc(50% - 30px);
+        }
+
+        @media screen and (max-width: 576px) {
+            max-width: 100%;
+            flex-basis: calc(100% - 30px);
+        }
+    }
+}
